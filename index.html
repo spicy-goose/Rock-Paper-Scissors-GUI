@@ -1,0 +1,223 @@
+<!doctype html>
+<html>
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+<style>
+
+	body{background-color: #A1DBE7}
+	p{	
+		text-align: center; 
+		color: #F5533D;
+		font-size: 52px;
+		font-family: 'Bangers', sans-serif;
+	}
+	#hover01 img.rock-player,img.paper-player, img.scissors-player, img.rock-pc,img.paper-pc, img.scissors-pc{
+	opacity: 0.5;
+	}
+	
+	#hover01 img.rock-player:hover, img.paper-player:hover, img.scissors-player:hover {
+	transform: scale(1.1);
+	opacity: 1;
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+	}
+</style>
+</head>
+<body>
+ <div>
+	<p>ROCK <br> <u> PAPER	SCISSORS</u></p>
+ </div>
+<div id="hover01" style = "text-align: center;">
+<img class="rock-player" style = "padding-right: 20px; " src="C:\Users\francoga\Downloads\Rock-player.png" alt="hand in a fist" />
+<img class="rock-pc" id = "icon" style = "padding-left: 20px; opacity: 0.5;" src="C:\Users\francoga\Downloads\Rock-pc.png" alt="hand in a fist" />
+</div>
+<div id="hover01" style="justify-content: center;align-items: center;text-align: center;display: flex;">
+	<div style="padding-right: 75px;"">
+	<p id = "playerScore">0</p>
+	</div>
+<div>
+<img class="paper-player" id = "icon" style = "padding-right: 20px;" src="C:\Users\francoga\Downloads\Paper-player.png" alt="hand in a fist" >
+<img class="paper-pc" id = "icon" style = "padding-left: 20px; opacity: 0.5;" src="C:\Users\francoga\Downloads\Paper-pc.png" alt="hand in a fist" >
+</div>	
+	<div style="padding-left: 75px;">
+	<p id = "computerScore">0</p>
+	</div>
+</div>
+<div id="hover01" style = "text-align: center;">
+<img class="scissors-player" id = "icon" style = "padding-right: 20px;" src="C:\Users\francoga\Downloads\Scissors-player.png" alt="hand in a fist" >
+<img class="scissors-pc" id = "icon" style = "padding-left: 20px; opacity: 0.5;" src="C:\Users\francoga\Downloads\Scissors-pc.png" alt="hand in a fist" >
+</div>
+<p id = "winningText">Make your move!</p>
+<script>
+//add selectors for rock paper and scissors elements
+let rock= document.querySelector(".rock-player");
+let paper= document.querySelector(".paper-player");
+let scissors= document.querySelector(".scissors-player");
+let rockComputer= document.querySelector(".rock-pc");
+let paperComputer= document.querySelector(".paper-pc");
+let scissorsComputer= document.querySelector(".scissors-pc");
+let winningText= document.querySelector("#winningText");
+let playerScoreDisplay= document.querySelector("#playerScore");
+let computerScoreDisplay= document.querySelector("#computerScore");
+
+// create function to select computer move
+function selectComputerMove(){
+
+	//initiate variable to hold computer move
+	let computerMove;
+
+	//create an array with three values: rock paper scissors 	
+	const choicesArr = ['ROCK', 'PAPER', 'SCISSORS'];
+	
+	//declare variable randomNum and assign a random number from 0-3 
+	let randomNum = Math.floor(Math.random()*3);
+
+	//select computer move
+	computerMove = choicesArr[randomNum];
+
+	//adjust opacity of selected move
+	switch (computerMove){
+		case "ROCK":
+			rockComputer.style.opacity = 1;
+			paperComputer.style.opacity = 0.5;
+			scissorsComputer.style.opacity = 0.5;
+			break;
+		case "PAPER":
+			rockComputer.style.opacity = 0.5;
+			paperComputer.style.opacity = 1;
+			scissorsComputer.style.opacity = 0.5;
+			break;
+		default:
+			rockComputer.style.opacity = 0.5;
+			paperComputer.style.opacity = 0.5;
+			scissorsComputer.style.opacity = 1;
+	}
+
+        //return the value of the array at index randomNum
+	return computerMove;
+}
+
+//create function to declare winner of round of RPS, needs two choices as parameters
+function declareWinner(computerMove, playerMove){
+	
+	//use switch statement to decide winner
+	switch(computerMove+playerMove){
+		case "ROCKSCISSORS":
+		case "PAPERROCK":
+		case "SCISSORSPAPER":
+			return "Computer"
+		case "SCISSORSROCK":
+		case "ROCKPAPER":
+		case "PAPERSCISSORS":
+			return "Player"
+		default:
+			return "Draw"
+	}
+}
+
+
+
+//create function to store/increment player score
+function playerScore(){	
+
+	//create variable to serve as player score 
+	let playerScore = 0;
+
+	//return function with parameter (point, computerMove)
+	return function(point, computerMove) {
+		//check that point exist, 
+		if (point){
+			//if yes increment player score 
+			++playerScore
+			
+			//display player score
+			playerScoreDisplay.textContent = playerScore;
+			
+			//return string declaring the player as winner of round, "computer chose x, you win"
+			return `Computer chose ${computerMove}, you win!`
+		}
+		//if no, return current score
+		return playerScore
+	}
+}
+
+//create function to store/increment computer score
+function computerScore(){
+
+	//create variable to serve as computer score 
+	let computerScore = 0;
+
+	//return function with parameter (point)
+	return function(point, computerMove) {
+		//check that point exist, 
+		if (point){
+			//if yes increment computer score
+			++computerScore;
+
+			//display computer score
+			computerScoreDisplay.textContent = computerScore;
+
+			//return string declaring computer as winner,  "computer chose x, you lose"
+			return `Computer chose ${computerMove}, you lose.`
+		}
+		//if no, return current computer score
+		return computerScore
+	}
+}	
+
+
+//create function to play a round of RPS 
+
+//create function to play a round of R, P , S, pass in functions to increment score
+function playRound(playerMove, currentPlayerScore, currentComputerScore){
+
+	//initiate variable for round winner
+	let roundWinner;
+
+	//initiate variable for computer move and call function to select computer move
+	let computerMove = selectComputerMove();
+
+	//if player move is null, cancel game
+	if (playerMove == null){
+		return null
+	}
+
+	//call function to declare winner and store in winner variable, pass computer and player moves
+	roundWinner = declareWinner(computerMove, playerMove);
+	
+	//if draw, declare a draw and call the play round function again
+	if (roundWinner == "Draw"){
+		winningText.textContent = `Computer chose ${computerMove}, it's a draw!`;
+		//return playRound(currentPlayerScore, currentComputerScore)
+	
+	//if player wins, call player increment function and return result, pass in computer move
+	}else if (roundWinner == "Player"){
+		winningText.textContent = `Computer chose ${computerMove}, you win!`;
+		currentPlayerScore("point", "computerMove");
+		//return currentPlayerScore("Player", computerMove)
+	
+	//else call computer increment function and return result, pass in computer move
+	}else{
+		winningText.textContent = `Computer chose ${computerMove}, you lose!`;
+		currentComputerScore("point", "computerMove");
+		//return currentComputerScore("Player", computerMove)
+
+	}
+	
+
+
+}
+let currentPlayerScore = playerScore();
+let currentComputerScore = computerScore();
+
+//add event listeners, callback function is
+rock.addEventListener("click", () => playRound("ROCK", currentPlayerScore, currentComputerScore));
+paper.addEventListener("click", () => playRound("PAPER", currentPlayerScore, currentComputerScore));
+scissors.addEventListener("click", () => playRound("SCISSORS", currentPlayerScore, currentComputerScore));
+
+
+</script>
+</body>
+</html>
