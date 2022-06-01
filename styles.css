@@ -7,7 +7,7 @@ body{background-color: #A1DBE7}
 	}
 	#hover01 img.rock-player,img.paper-player, img.scissors-player, img.rock-pc,img.paper-pc, img.scissors-pc{
 	opacity: 0.5;
-	transition: all 0.2s ease-out 100ms
+	transition: all 0.1s ease-out 100ms
 	}
 	
 	#hover01 img.rock-player:hover, img.paper-player:hover, img.scissors-player:hover {
