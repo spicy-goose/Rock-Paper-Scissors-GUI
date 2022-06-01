@@ -1,0 +1,37 @@
+body{background-color: #A1DBE7}
+	p{	
+		text-align: center; 
+		color: #F5533D;
+		font-size: 52px;
+		font-family: 'Bangers', sans-serif;
+	}
+	#hover01 img.rock-player,img.paper-player, img.scissors-player, img.rock-pc,img.paper-pc, img.scissors-pc{
+	opacity: 0.5;
+	transition: all 0.2s ease-out 100ms
+	}
+	
+	#hover01 img.rock-player:hover, img.paper-player:hover, img.scissors-player:hover {
+	transform: scale(1.1);
+	opacity: 1;
+	}
+
+	.playAgainButton{
+    	font-size: 30px;
+    	background-color: rgb(245, 83, 61);
+    	border-radius: 12px;
+    	width: 350px;
+    	border-style: hidden;
+    	height: 80px;
+    	font-family: Bangers;
+    	color: rgb(161, 219, 231);
+    	margin-left: -180px;
+    	position: fixed;
+    	top: 50%;
+    	left: 50%;
+	transition: all 0.3s ease-out 100ms;
+	}
+
+	.playAgainButton:hover{
+	color: white;
+	transform: scale(1.1);
+	}
