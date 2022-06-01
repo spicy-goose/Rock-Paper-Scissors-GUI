@@ -216,13 +216,13 @@ function resetGame(button, resetMethod){
 	playerScoreDisplay.textContent = `0/5`;
 	computerScoreDisplay.textContent = `0/5`;
 
-	//set icons opacity to 0.5
-	rock.style.opacity = 0.5;
-	paper.style.opacity = 0.5;	
-	scissors.style.opacity = 0.5;	
-	rockComputer.style.opacity = 0.5;
-	paperComputer.style.opacity = 0.5;	
-	scissorsComputer.style.opacity = 0.5;	
+	//set icons opacity to null
+	rock.style.opacity = null;
+	paper.style.opacity = null;	
+	scissors.style.opacity = null;	
+	rockComputer.style.opacity = null;
+	paperComputer.style.opacity = null;	
+	scissorsComputer.style.opacity = null;	
 
 	//stops listening to play again button
 	button.removeEventListener("click", resetMethod);
