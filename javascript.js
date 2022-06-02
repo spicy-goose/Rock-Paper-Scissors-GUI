@@ -8,7 +8,7 @@ let scissorsComputer= document.querySelector(".scissors-pc");
 let winningText= document.querySelector("#winningText");
 let playerScoreDisplay= document.querySelector("#playerScore");
 let computerScoreDisplay= document.querySelector("#computerScore");
-
+let hover02 = document.querySelector("#hover02");
 
 // create function to select computer move
 function selectComputerMove(){
@@ -176,9 +176,9 @@ function addPlayAgainButton(winner){
 	//add button class
 	button.classList.add("playAgainButton")
 	//Object.assign(button.style, buttonStyle);
-
-	//apend child
-	document.body.appendChild(button);
+	
+	//apend child to hover02 div
+	hover02.appendChild(button);
 
 	//create function to call reset game, pass method and button
 	let resetMethod = () => resetGame(button, resetMethod)
@@ -228,7 +228,7 @@ function resetGame(button, resetMethod){
 	button.removeEventListener("click", resetMethod);
 
 	//unappend button from page
-	document.body.removeChild(button)
+	hover02.removeChild(button)
 
 	//calls function to start listeners
 	startListening()
