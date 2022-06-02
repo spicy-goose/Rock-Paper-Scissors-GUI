@@ -1,16 +1,15 @@
-
 	body{background-color: #A1DBE7}
 	p{	
 		text-align: center; 
 		color: #F5533D;
 		font-size: 48px;
 		font-family: 'Bangers', sans-serif;
-		margin-top: 10%;
-		margin-bottom: 10%;
+		margin-top: 5%;
+		margin-bottom: 5%;
 	}
 	.scores{
 		text-align: center;
-		margin-top: 10%;
+		margin-top: 5%;
 	}
 	.scores p{
 		display: inline;
