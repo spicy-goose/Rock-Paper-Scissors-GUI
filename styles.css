@@ -1,37 +1,63 @@
-body{background-color: #A1DBE7}
+	body{background-color: #A1DBE7}
 	p{	
 		text-align: center; 
 		color: #F5533D;
-		font-size: 52px;
+		font-size: 48px;
 		font-family: 'Bangers', sans-serif;
+		margin-top: 2.5%;
+		margin-bottom: 2.5%;
 	}
-	#hover01 img.rock-player,img.paper-player, img.scissors-player, img.rock-pc,img.paper-pc, img.scissors-pc{
-	opacity: 0.5;
-	transition: all 0.1s ease-out 100ms
+	.scores{
+		text-align: center;
+		margin-top: 2%;
+	}
+	.scores p{
+		display: inline;
+		padding-left: 2.5%;
+		padding-right: 2.5%;
+	}
+	#hover01, #hover02, #hover03{
+		text-align: center;
+		
 	}
 	
-	#hover01 img.rock-player:hover, img.paper-player:hover, img.scissors-player:hover {
-	transform: scale(1.1);
-	opacity: 1;
+	#hover01 img.rock-player, #hover02 img.paper-player, #hover03 img.scissors-player{
+		padding-right: 20px;
+	}
+	
+	#hover01 img.rock-pc, #hover02 img.paper-pc, #hover03 img.scissors-pc{
+		padding-left: 20px;
+	}
+
+	#hover01 img.rock-player, img.rock-pc, #hover02 img.paper-player, img.paper-pc, #hover03 img.scissors-player, img.scissors-pc{
+		max-width: 40%;
+		opacity: 0.5;
+		transition: all 0.2s ease-out 100ms
+	}
+	
+	#hover01 img.rock-player:hover, #hover02 img.paper-player:hover, #hover03 img.scissors-player:hover {
+		transform: scale(1.1);
+		opacity: 1;
 	}
 
 	.playAgainButton{
-    	font-size: 30px;
-    	background-color: rgb(245, 83, 61);
-    	border-radius: 12px;
-    	width: 350px;
-    	border-style: hidden;
-    	height: 80px;
-    	font-family: Bangers;
-    	color: rgb(161, 219, 231);
-    	margin-left: -180px;
-    	position: fixed;
-    	top: 50%;
-    	left: 50%;
-	transition: all 0.3s ease-out 100ms;
+    		font-size: 30px;
+    		background-color: rgb(245, 83, 61);
+    		border-radius: 12px;
+    		width: 350px;
+    		border-style: hidden;
+    		height: 80px;
+    		font-family: Bangers;
+    		color: rgb(161, 219, 231);
+    		margin-left: -180px;
+    		position: fixed;
+    		top: 25%;
+    		left: 50%;
+		z-index: 2;
+		transition: all 0.3s ease-out 100ms;
 	}
 
 	.playAgainButton:hover{
-	color: white;
-	transform: scale(1.1);
+		color: white;
+		transform: scale(1.1);
 	}
