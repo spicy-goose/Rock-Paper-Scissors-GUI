@@ -1,39 +1,37 @@
 <!doctype html>
 <html>
-<head>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
-</head>
-<body>
- <div>
-	<p>ROCK <br> <u> PAPER	SCISSORS</u></p>
- </div>
-<div id="hover01" style = "text-align: center;">
-<img class="rock-player" style = "padding-right: 20px; " src="images\Rock-player.PNG" alt="hand in a fist" />
-<img class="rock-pc" id = "icon" style = "padding-left: 20px; opacity: 0.5;" src="images\Rock-pc.png" alt="hand in a fist" />
-</div>
-<div id="hover01" style="justify-content: center;align-items: center;text-align: center;display: flex;">
-	<div style="padding-right: 75px;"">
-	<p id = "playerScore">0/5</p>
-	</div>
-<div>
-<img class="paper-player" id = "icon" style = "padding-right: 20px;" src="images\paper-player.PNG" alt="hand in a fist" >
-<img class="paper-pc" id = "icon" style = "padding-left: 20px; opacity: 0.5;" src="images\paper-pc.png" alt="hand in a fist" >
-</div>	
-	<div style="padding-left: 75px;">
-	<p id = "computerScore">0/5</p>
-	</div>
-</div>
-<div id="hover01" style = "text-align: center;">
-<img class="scissors-player" id = "icon" style = "padding-right: 20px;" src="images\Scissors-player.PNG" alt="hand in a fist" >
-<img class="scissors-pc" id = "icon" style = "padding-left: 20px; opacity: 0.5;" src="images\Scissors-pc.png" alt="hand in a fist" >
-</div>
-<p id = "winningText">Make your move!</p>
-<script src = "javascript.js"> </script>
-</body>
+	<head>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="styles.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<div>
+			<p><u>ROCK PAPER SCISSORS</u></p>
+		</div>
+		<div id="hover01">
+			<img class="rock-player" style = "padding-right: 20px; " src="images\Rock-player.PNG" alt="hand in a fist" />
+			<img class="rock-pc" id = "icon" style = "padding-left: 20px; opacity: 0.5;" src="images\Rock-pc.png" alt="hand in a fist" />
+		</div>
+		<div id="hover02">	
+			<img class="paper-player" id = "icon" style = "padding-right: 20px;" src="images\paper-player.PNG" alt="hand in a fist" >
+			<img class="paper-pc" id = "icon" style = "padding-left: 20px; opacity: 0.5;" src="images\paper-pc.png" alt="hand in a fist" >
+		</div>
+		<div id="hover03">
+			<img class="scissors-player" id = "icon" style = "padding-right: 20px;" src="images\Scissors-player.PNG" alt="hand in a fist" >
+			<img class="scissors-pc" id = "icon" style = "padding-left: 20px; opacity: 0.5;" src="images\Scissors-pc.png" alt="hand in a fist" >
+		</div>
+		<div class = "scores" >
+			<p id = "playerScore">0/5</p>
+			<p id = "computerScore">0/5</p>
+		</div>
+		<div>
+			<p id = "winningText">Make your move!</p>
+		</div>
+		<script src = "javascript.js"> </script>
+	</body>
 </html>
